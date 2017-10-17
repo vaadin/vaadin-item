@@ -24,11 +24,26 @@
         expect(item.localName).to.be.equal('vaadin-item');
       });
 
+      it('should have prefix slot', () => {
+      });
+
+      it('should have icon slot', () => {
+      });
+
       it('should have an unnamed slot for label', () => {
         const slot = item.root.querySelector('slot:not([name])');
         const content = slot.assignedNodes()[0];
         expect(content.nodeType).to.be.equal(3);
         expect(content.textContent.trim()).to.be.equal('label');
+      });
+
+      it('should have badge slot', () => {
+      });
+
+      it('should have suffix slot', () => {
+      });
+
+      it('should have an unnamed slot for content', () => {
       });
     });
   </script>

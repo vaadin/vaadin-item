@@ -17,18 +17,83 @@ This program is available under Apache License Version 2.0, available at https:/
         text-overflow: ellipsis;
         box-sizing: border-box;
       }
+
+      [part="label"] {
+        display: flex;
+        flex: 1;
+        padding: 5px 10px;
+      }
+
+      [part="icon"] {
+        display: flex;
+        align-items: center;
+      }
+
+      [part="icon"] ::slotted(*) {
+        border-radius: 50%;
+        max-width: 24px;
+        max-height: 24px;
+      }
+
+      [part="badge"] {
+        position: absolute;
+        top: 0;
+        right: 4px;
+        font-size: 75%;
+      }
     </style>
   </template>
 </dom-module>
 
 <dom-module id="vaadin-item">
   <template>
-    <slot></slot>
+    <style>
+      :host {
+        display: flex;
+        position: relative;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
+    </style>
+    <div class="container">
+      <slot name="prefix"></slot>
+      <div part="icon">
+        <slot name="icon"></slot>
+      </div>
+      <div part="label">
+         <slot></slot>
+      </div>
+      <div part="badge">
+        <slot name="badge"></slot>
+      </div>
+      <slot name="suffix"></slot>
+    </div>
   </template>
   <script>
     {
       /**
        * `<vaadin-item>` is a Polymer 2 element providing layout for items in tabs and menus.
+       *
+       * It has 4 slots:
+       *  - The `prefix` slot to add additional content at the left of the label.
+       *  - The `icon` slot to provide an icon or image.
+       *  - The `label` slot for the text of the item.
+       *  - The `badge` slot for adding some thext the small area.
+       *  - The `suffix` slot to add additional content at the right of the label.
+       *
+       * ### Styling
+       *
+       * The following shadow DOM parts are available for styling:
+       *
+       * Part name | Description | Theme for Element
+       * ----------------|----------------|----------------
+       * `icon` | The item icon | vaadin-item
+       * `label` | The item label | vaadin-item
+       * `badge` | For auxilary content | vaadin-item
        *
        * @memberof Vaadin
        * @mixes Vaadin.ItemMixin
