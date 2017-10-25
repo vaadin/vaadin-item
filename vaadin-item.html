@@ -12,10 +12,25 @@ This program is available under Apache License Version 2.0, available at https:/
   <template>
     <style>
       :host {
-        padding: 4px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        display: flex;
+        align-items: center;
+        outline: none;
+        opacity: 0.7;
+        padding: 0.3em 1em;
         box-sizing: border-box;
+        flex-shrink: 0;
+      }
+
+      :host([selected]) {
+        opacity: 1;
+      }
+
+      :host([focus-ring]) {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      :host([disabled]) {
+        opacity: 0.3;
       }
     </style>
   </template>
@@ -25,8 +40,9 @@ This program is available under Apache License Version 2.0, available at https:/
   <template>
     <style>
       :host {
-        display: block;
+        display: inline-block;
         cursor: pointer;
+        flex-shrink: 0;
       }
 
       :host([hidden]) {
