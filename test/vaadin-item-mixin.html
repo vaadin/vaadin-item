@@ -160,10 +160,9 @@
       });
 
       it('should not fire click event if keyup does not happen after a keydown in the element', () => {
-        item.addEventListener('click', () => {
-          throw new Error('click fired!');
-        });
+        const clickSpy = sinon.spy();
         spaceUp(item);
+        expect(clickSpy).not.to.be.called;
       });
     });
   </script>
