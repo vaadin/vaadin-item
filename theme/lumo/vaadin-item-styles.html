@@ -48,8 +48,17 @@
         transition-duration: 0s;
       }
 
-      [part="content"] {
-        flex: auto;
+      :host .main-content {
+        padding: 0 var(--lumo-space-s);
+      }
+
+      :host ::slotted([slot="prefix"]),
+      :host ::slotted([slot="suffix"]) {
+        padding: 0 calc(var(--lumo-space-s) / 2);
+      }
+
+      :host ::slotted([slot="suffix"]) {
+        margin: calc(var(--lumo-space-s) / -2) 0;
       }
 
       /* Disabled item */

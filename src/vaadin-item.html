@@ -18,9 +18,34 @@ This program is available under Apache License Version 2.0, available at https:/
       :host([hidden]) {
         display: none !important;
       }
+
+      :host [part="content"] {
+        display: flex;
+        flex: auto;
+        align-items: center;
+      }
+
+      :host .main-content {
+        flex: auto;
+      }
+
+      :host ::slotted([slot="prefix"]),
+      :host ::slotted([slot="suffix"]) {
+        flex: none;
+      }
+
+      :host ::slotted(:not(vaadin-button)) {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
     </style>
     <div part="content">
-      <slot></slot>
+      <slot id="prefix" name="prefix"></slot>
+      <div class="main-content">
+        <slot></slot>
+      </div>
+      <slot id="suffix" name="suffix"></slot>
     </div>
   </template>
   <script>

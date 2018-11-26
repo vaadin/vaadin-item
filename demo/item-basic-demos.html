@@ -6,6 +6,91 @@
       }
     </style>
 
+    <h3>Prefix and Suffix</h3>
+    <vaadin-demo-snippet id="item-basic-demos-slotted-content">
+      <template preserve-content>
+        <style>
+
+          vaadin-item {
+            background: pink;
+            margin: 5px 0;
+            max-width: 500px;
+          }
+
+          .small {
+            font-size: var(--lumo-font-size-s);
+          }
+
+          .secondary {
+            color: var(--lumo-secondary-text-color);
+          }
+
+          .avatar {
+            width: var(--lumo-size-m);
+            height: var(--lumo-size-m);
+            background-color: var(--lumo-contrast-30pct);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--lumo-border-radius);
+            color: var(--lumo-base-color);
+            font-weight: 600;
+          }
+
+          .avatar::before {
+            content: attr(size);
+          }
+
+          .block {
+            display: block;
+          }
+
+          vaadin-item.checkmark::before {
+            display: block;
+          }
+
+          vaadin-item.checkmark {
+            padding-left: calc(var(--lumo-border-radius) / 4);
+          }
+        </style>
+
+        <vaadin-item tabindex="0">
+          <div slot="prefix" class="avatar" size="M"></div>
+
+          <p>Normal text</p>
+          <p class="small secondary">Small secondary text</p>
+
+          <vaadin-button slot="suffix" theme="tertiary-inline">Action</vaadin-button>
+        </vaadin-item>
+
+        <vaadin-item tabindex="0">
+          <h5>Header 5</h5>
+          <p class="small secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+          <div slot="suffix">
+            <vaadin-button class="block" theme="primary">Action</vaadin-button>
+            <vaadin-button class="block">Action</vaadin-button>
+          </div>
+        </vaadin-item>
+
+        <vaadin-item class="checkmark" tabindex="0">
+          <div slot="prefix" class="avatar" size="M"></div>
+
+          <p>Item with checkmark</p>
+          <p class="small secondary">cool</p>
+
+          <vaadin-button slot="suffix" theme="tertiary-inline">Action</vaadin-button>
+        </vaadin-item>
+
+        <script>
+          window.addDemoReadyListener('#item-basic-demos-slotted-content', document => {
+            var item = document.querySelector('.checkmark');
+            item.addEventListener('click', e => item.selected = !item.selected);
+          });
+        </script>
+      </template>
+    </vaadin-demo-snippet>
+
     <h3>Simple Item</h3>
     <vaadin-demo-snippet id="item-basic-demos-simple-item">
       <template preserve-content>
