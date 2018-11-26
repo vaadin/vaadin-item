@@ -12,7 +12,9 @@ This program is available under Apache License Version 2.0, available at https:/
   <template>
     <style>
       :host {
-        display: inline-block;
+        display: flex;
+        flex: auto;
+        align-items: center;
       }
 
       :host([hidden]) {
@@ -20,12 +22,6 @@ This program is available under Apache License Version 2.0, available at https:/
       }
 
       :host [part="content"] {
-        display: flex;
-        flex: auto;
-        align-items: center;
-      }
-
-      :host .main-content {
         flex: auto;
       }
 
@@ -34,19 +30,19 @@ This program is available under Apache License Version 2.0, available at https:/
         flex: none;
       }
 
-      :host ::slotted(:not(vaadin-button)) {
+      :host ::slotted(*) {
         margin-top: 0;
         margin-bottom: 0;
       }
 
     </style>
+
+    <slot id="prefix" name="prefix"></slot>
     <div part="content">
-      <slot id="prefix" name="prefix"></slot>
-      <div class="main-content">
-        <slot></slot>
-      </div>
-      <slot id="suffix" name="suffix"></slot>
+      <slot></slot>
     </div>
+    <slot id="suffix" name="suffix"></slot>
+
   </template>
   <script>
     (function() {
