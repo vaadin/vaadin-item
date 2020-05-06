@@ -152,7 +152,10 @@ This program is available under Apache License Version 2.0, available at https:/
       }
     }
 
-    /** @private */
+    /**
+     * @param {!KeyboardEvent} event
+     * @protected
+     */
     _onKeydown(event) {
       if (/^( |SpaceBar|Enter)$/.test(event.key) && !event.defaultPrevented) {
         event.preventDefault();
@@ -160,7 +163,10 @@ This program is available under Apache License Version 2.0, available at https:/
       }
     }
 
-    /** @private */
+    /**
+     * @param {!KeyboardEvent} event
+     * @protected
+     */
     _onKeyup(event) {
       if (this.hasAttribute('active')) {
         this._setActive(false);
