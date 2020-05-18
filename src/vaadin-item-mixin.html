@@ -3,6 +3,7 @@
 Copyright (c) 2017 Vaadin Ltd.
 This program is available under Apache License Version 2.0, available at https://vaadin.com/license/
 -->
+<link rel="import" href="../../vaadin-element-mixin/vaadin-dir-mixin.html">
 
 <script>
   /**
@@ -15,9 +16,10 @@ This program is available under Apache License Version 2.0, available at https:/
    *
    * `focused`, `active` and `focus-ring` are set as only as attributes.
    * @polymerMixin
+   * @mixes Vaadin.DirMixin
    * @memberof Vaadin
    */
-  Vaadin.ItemMixin = superClass => class VaadinItemMixin extends superClass {
+  Vaadin.ItemMixin = superClass => class VaadinItemMixin extends Vaadin.DirMixin(superClass) {
     static get properties() {
       return {
 
