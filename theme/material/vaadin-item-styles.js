@@ -1,63 +1,58 @@
+import { registerStyles, css } from '@vaadin/vaadin-themable-mixin/register-styles.js';
 import '@vaadin/vaadin-material-styles/font-icons.js';
 import '@vaadin/vaadin-material-styles/color.js';
 import '@vaadin/vaadin-material-styles/typography.js';
-import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 
-const $_documentContainer = html`<dom-module id="material-item" theme-for="vaadin-item">
-  <template>
-    <style>
-      :host {
-        display: flex;
-        align-items: center;
-        box-sizing: border-box;
-        overflow: hidden;
-        font-family: var(--material-font-family);
-        font-size: var(--material-body-font-size);
-        line-height: 24px;
-        padding: 4px 0;
-      }
+registerStyles(
+  'vaadin-item',
+  css`
+    :host {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      overflow: hidden;
+      font-family: var(--material-font-family);
+      font-size: var(--material-body-font-size);
+      line-height: 24px;
+      padding: 4px 0;
+    }
 
-      /* It's the list-box's responsibility to add the focus style */
-      :host([focused]) {
-        outline: none;
-      }
+    /* It's the list-box's responsibility to add the focus style */
+    :host([focused]) {
+      outline: none;
+    }
 
-      /* Selected item has an icon */
+    /* Checkmark */
+    :host::before {
+      display: var(--_material-item-selected-icon-display, none);
+      content: '';
+      font-family: material-icons;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 400;
+      width: 24px;
+      text-align: center;
+      margin-right: 10px;
+      color: var(--material-secondary-text-color);
+      flex: none;
+    }
 
-      :host::before {
-        display: var(--_material-item-selected-icon-display, none);
-        content: "";
-        font-family: material-icons;
-        font-size: 24px;
-        line-height: 1;
-        font-weight: 400;
-        width: 24px;
-        text-align: center;
-        margin-right: 10px;
-        color: var(--material-secondary-text-color);
-        flex: none;
-      }
+    :host([selected])::before {
+      content: var(--material-icons-check);
+    }
 
-      :host([selected])::before {
-        content: var(--material-icons-check);
-      }
+    /* Disabled */
+    :host([disabled]) {
+      color: var(--material-disabled-text-color);
+      cursor: default;
+      pointer-events: none;
+    }
 
-      /* Disabled item */
-
-      :host([disabled]) {
-        color: var(--material-disabled-text-color);
-        cursor: default;
-        pointer-events: none;
-      }
-
-      /* RTL specific styles */
-
-      :host([dir="rtl"])::before {
-        margin-right: 0;
-        margin-left: 10px;
-      }
-    </style>
-  </template>
-</dom-module>`;
-
-document.head.appendChild($_documentContainer.content);
+    /* RTL specific styles */
+    :host([dir='rtl'])::before {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+  `,
+  { moduleId: 'material-item' }
+);
