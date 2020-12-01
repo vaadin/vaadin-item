@@ -1,12 +1,8 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element.js';
-
 import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 
 import {DirMixin} from '@vaadin/vaadin-element-mixin/vaadin-dir-mixin.js';
 
 import {ItemMixin} from './vaadin-item-mixin.js';
-
-import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 
 /**
  * `<vaadin-item>` is a Web Component providing layout for items in tabs and menus.
@@ -47,7 +43,7 @@ declare class ItemElement extends
   ItemMixin(
   ThemableMixin(
   DirMixin(
-  PolymerElement))) {
+  HTMLElement))) {
 
   /**
    * Submittable string value. The default value is the trimmed text content of the element.

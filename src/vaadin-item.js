@@ -44,7 +44,7 @@ import { html } from '@polymer/polymer/lib/utils/html-tag.js';
  * `selected` | Set when the item is selected | :host
  * `active` | Set when mousedown or enter/spacebar pressed | :host
  *
- * @extends PolymerElement
+ * @extends HTMLElement
  * @mixes ItemMixin
  * @mixes ThemableMixin
  * @mixes DirMixin

@@ -33,8 +33,6 @@ interface ItemMixin {
    * If true, the item is in selected state.
    */
   selected: boolean;
-  ready(): void;
-  disconnectedCallback(): void;
   _setFocused(focused: boolean): void;
   _setActive(active: boolean): void;
   _onKeydown(event: KeyboardEvent): void;
