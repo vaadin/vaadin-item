@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>vaadin-item tests</title>
-  <script src="../../web-component-tester/browser.js"></script>
-  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="../../test-fixture/test-fixture.html">
-  <link rel="import" href="../vaadin-item.html">
+  <script src="../../../wct-browser-legacy/browser.js"></script>
+  <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+  <script type="module" src="../../../@polymer/test-fixture/test-fixture.js"></script>
+  <script type="module" src="../vaadin-item.js"></script>
 </head>
 
 <body>
@@ -16,38 +16,40 @@
     </template>
   </test-fixture>
 
-  <script>
-    describe('basic test', () => {
-      var item;
+  <script type="module">
+import '@polymer/test-fixture/test-fixture.js';
+import '../vaadin-item.js';
+describe('basic test', () => {
+  var item;
 
-      beforeEach(() => item = fixture('vaadinItem'));
+  beforeEach(() => item = fixture('vaadinItem'));
 
-      it('should have a correct localName', () => {
-        expect(item.localName).to.be.equal('vaadin-item');
-      });
+  it('should have a correct localName', () => {
+    expect(item.localName).to.be.equal('vaadin-item');
+  });
 
-      it('should extend item-mixin', () => {
-        expect(item._hasVaadinItemMixin).to.be.true;
-      });
+  it('should extend item-mixin', () => {
+    expect(item._hasVaadinItemMixin).to.be.true;
+  });
 
-      it('should have an unnamed slot for label', () => {
-        const slot = item.shadowRoot.querySelector('slot:not([name])');
-        const content = slot.assignedNodes()[0];
-        expect(content.nodeType).to.be.equal(3);
-        expect(content.textContent.trim()).to.be.equal('label');
-      });
+  it('should have an unnamed slot for label', () => {
+    const slot = item.shadowRoot.querySelector('slot:not([name])');
+    const content = slot.assignedNodes()[0];
+    expect(content.nodeType).to.be.equal(3);
+    expect(content.textContent.trim()).to.be.equal('label');
+  });
 
-      it('should have a content part wrapping slot', () => {
-        const slot = item.shadowRoot.querySelector('slot');
-        const content = item.shadowRoot.querySelector('[part="content"]');
-        expect(content).to.be.instanceof(Element);
-        expect(slot.parentElement).to.equal(content);
-      });
+  it('should have a content part wrapping slot', () => {
+    const slot = item.shadowRoot.querySelector('slot');
+    const content = item.shadowRoot.querySelector('[part="content"]');
+    expect(content).to.be.instanceof(Element);
+    expect(slot.parentElement).to.equal(content);
+  });
 
-      it('should have a block context for content part', () => {
-        const content = item.shadowRoot.querySelector('[part="content"]');
-        expect(getComputedStyle(content).getPropertyValue('display')).to.equal('block');
-      });
-    });
-  </script>
+  it('should have a block context for content part', () => {
+    const content = item.shadowRoot.querySelector('[part="content"]');
+    expect(getComputedStyle(content).getPropertyValue('display')).to.equal('block');
+  });
+});
+</script>
 </body>
