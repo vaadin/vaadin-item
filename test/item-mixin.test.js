@@ -119,15 +119,10 @@ describe('vaadin-item-mixin', () => {
       expect(item._mousedown).to.be.false;
     });
 
-    it('should be not selected if disabled', () => {
+    it('should set selected to false when disabled', () => {
+      item.selected = true;
       space(item);
       item.disabled = true;
-      expect(item.selected).to.be.false;
-    });
-
-    it('should not be selectable if disabled', () => {
-      item.disabled = true;
-      space(item);
       expect(item.selected).to.be.false;
     });
 
@@ -136,12 +131,6 @@ describe('vaadin-item-mixin', () => {
       expect(item.getAttribute('aria-disabled')).to.equal('true');
       item.disabled = false;
       expect(item.getAttribute('aria-disabled')).to.be.null;
-    });
-
-    it('should be possible to unselect the current item', () => {
-      item.click();
-      item.click();
-      expect(item.selected).to.be.false;
     });
 
     it('should fire click event when it is selected with keyboard', () => {
