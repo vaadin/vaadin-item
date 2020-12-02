@@ -1,6 +1,3 @@
-export {ItemMixin};
-
-
 /**
  * A mixin providing `focused`, `focus-ring`, `active`, `disabled` and `selected`.
  *
@@ -9,10 +6,8 @@ export {ItemMixin};
 declare function ItemMixin<T extends new (...args: any[]) => {}>(base: T): T & ItemMixinConstructor;
 
 interface ItemMixinConstructor {
-  new(...args: any[]): ItemMixin;
+  new (...args: any[]): ItemMixin;
 }
-
-export {ItemMixinConstructor};
 
 interface ItemMixin {
   value: string;
@@ -33,8 +28,14 @@ interface ItemMixin {
    * If true, the item is in selected state.
    */
   selected: boolean;
+
   _setFocused(focused: boolean): void;
+
   _setActive(active: boolean): void;
+
   _onKeydown(event: KeyboardEvent): void;
+
   _onKeyup(event: KeyboardEvent): void;
 }
+
+export { ItemMixin, ItemMixinConstructor };

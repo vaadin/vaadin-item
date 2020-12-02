@@ -1,8 +1,8 @@
-import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
+import { ThemableMixin } from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 
-import {DirMixin} from '@vaadin/vaadin-element-mixin/vaadin-dir-mixin.js';
+import { DirMixin } from '@vaadin/vaadin-element-mixin/vaadin-dir-mixin.js';
 
-import {ItemMixin} from './vaadin-item-mixin.js';
+import { ItemMixin } from './vaadin-item-mixin.js';
 
 /**
  * `<vaadin-item>` is a Web Component providing layout for items in tabs and menus.
@@ -39,12 +39,7 @@ import {ItemMixin} from './vaadin-item-mixin.js';
  * `selected` | Set when the item is selected | :host
  * `active` | Set when mousedown or enter/spacebar pressed | :host
  */
-declare class ItemElement extends
-  ItemMixin(
-  ThemableMixin(
-  DirMixin(
-  HTMLElement))) {
-
+declare class ItemElement extends ItemMixin(ThemableMixin(DirMixin(HTMLElement))) {
   /**
    * Submittable string value. The default value is the trimmed text content of the element.
    */
@@ -52,10 +47,9 @@ declare class ItemElement extends
 }
 
 declare global {
-
   interface HTMLElementTagNameMap {
-    "vaadin-item": ItemElement;
+    'vaadin-item': ItemElement;
   }
 }
 
-export {ItemElement};
+export { ItemElement };

@@ -35,7 +35,7 @@ describe('vaadin-item-mixin', () => {
   }
 
   function fire(target, type) {
-    target.dispatchEvent(new CustomEvent(type, {composed: true, bubbles: true}));
+    target.dispatchEvent(new CustomEvent(type, { composed: true, bubbles: true }));
   }
 
   describe('properties', () => {
@@ -189,7 +189,7 @@ describe('vaadin-item-mixin', () => {
 
     it('should not set active attribute if keydown was prevented', () => {
       const button = item.querySelector('button');
-      button.addEventListener('keydown', e => {
+      button.addEventListener('keydown', (e) => {
         e.preventDefault();
       });
       spaceDown(button);

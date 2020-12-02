@@ -51,19 +51,19 @@ import { ItemMixin } from './vaadin-item-mixin.js';
 class ItemElement extends ItemMixin(ThemableMixin(DirMixin(PolymerElement))) {
   static get template() {
     return html`
-    <style>
-      :host {
-        display: inline-block;
-      }
+      <style>
+        :host {
+          display: inline-block;
+        }
 
-      :host([hidden]) {
-        display: none !important;
-      }
-    </style>
-    <div part="content">
-      <slot></slot>
-    </div>
-`;
+        :host([hidden]) {
+          display: none !important;
+        }
+      </style>
+      <div part="content">
+        <slot></slot>
+      </div>
+    `;
   }
 
   static get is() {
