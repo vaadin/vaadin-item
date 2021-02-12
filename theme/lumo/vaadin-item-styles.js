@@ -22,6 +22,11 @@ registerStyles(
       -webkit-tap-highlight-color: transparent;
     }
 
+    /* Error theme variant */
+    :host([theme~='error']) {
+      color: var(--lumo-error-text-color);
+    }
+
     /* Checkmark */
     :host([tabindex])::before {
       display: var(--_lumo-item-selected-icon-display, none);
