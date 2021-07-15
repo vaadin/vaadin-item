@@ -1,13 +1,3 @@
-[![npm version](https://badgen.net/npm/v/@vaadin/vaadin-item)](https://www.npmjs.com/package/@vaadin/vaadin-item)
-[![Bower version](https://badgen.net/github/release/vaadin/vaadin-item)](https://github.com/vaadin/vaadin-item/releases)
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/vaadin/vaadin-item)
-[![Build Status](https://travis-ci.org/vaadin/vaadin-item.svg?branch=master)](https://travis-ci.org/vaadin/vaadin-item)
-[![Coverage Status](https://coveralls.io/repos/github/vaadin/vaadin-item/badge.svg?branch=master)](https://coveralls.io/github/vaadin/vaadin-item?branch=master)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/web-components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
-[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/vaadinvaadin-item)
-[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/vaadinvaadin-item.svg)](https://vaadin.com/directory/component/vaadinvaadin-item)
-
 # &lt;vaadin-item&gt;
 
 > ⚠️ Starting from Vaadin 20, the source code and issues for this component are migrated to the [`vaadin/web-components`](https://github.com/vaadin/web-components/tree/master/packages/vaadin-item) monorepository.
@@ -18,6 +8,11 @@
 [Live Demo ↗](https://vaadin.com/components/vaadin-item/html-examples)
 |
 [API documentation ↗](https://vaadin.com/components/vaadin-item/html-api)
+
+[![npm version](https://badgen.net/npm/v/@vaadin/vaadin-item)](https://www.npmjs.com/package/@vaadin/vaadin-item)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/vaadin/vaadin-item)
+[![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/vaadinvaadin-item)
+[![Discord](https://img.shields.io/discord/732335336448852018?label=discord)](https://discord.gg/PHmkCKC)
 
 <!--
 ```
