@@ -71,7 +71,7 @@ jobs:
         run: echo "127.0.0.1 localhost-for-saucelabs" | sudo tee -a /etc/hosts
 
       - name: Run unit tests on SauceLabs
-        run: "wct --npm --env saucelabs"
+        run: "npm test -- --env saucelabs"
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
