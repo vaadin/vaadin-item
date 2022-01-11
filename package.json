@@ -30,7 +30,9 @@
   },
   "overrides": {
     "web-component-tester": {
-      "wct-local": "2.1.5"
+      "wct-local": {
+        "launchpad": "0.7.5"
+      }
     }
   },
   "scripts": {
