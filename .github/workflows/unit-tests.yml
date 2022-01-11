@@ -26,7 +26,7 @@ jobs:
         run: "npm install --quiet --no-progress --global bower polymer-cli"
 
       - name: Install project npm dependencies
-        run: "npm install --quiet --no-progress"
+        run: "npm ci"
 
       - name: Install project Bower dependencies
         run: "bower install --quiet"
@@ -58,7 +58,7 @@ jobs:
         run: "npm install --quiet --no-progress --global bower polymer-modulizer"
 
       - name: Install project npm dependencies
-        run: "npm install --quiet --no-progress"
+        run: "npm ci"
 
       - name: Convert the source code to Polymer 3
         run: |
