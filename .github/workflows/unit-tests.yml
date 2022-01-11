@@ -23,16 +23,10 @@ jobs:
       - name: Install global npm dependencies
         # bower is needed to run 'bower install'
         # polymer-cli is needed to run the lint step
-        run: "npm install --quiet --no-progress --global bower polymer-cli patch-package"
+        run: "npm install --quiet --no-progress --global bower polymer-cli"
 
       - name: Install project npm dependencies
         run: "npm ci"
-
-      - name: Check launchpad version
-        run: "npm ls launchpad"
-
-      - name: Patch wct-local
-        run: "npx patch-package"
 
       - name: Install project Bower dependencies
         run: "bower install --quiet"
