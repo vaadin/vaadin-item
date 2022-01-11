@@ -29,7 +29,9 @@
     }
   },
   "overrides": {
-    "wct-local": "2.1.5"
+    "web-component-tester": {
+      "wct-local": "2.1.5"
+    }
   },
   "scripts": {
     "test": "wct",
