@@ -28,6 +28,9 @@
       "pre-commit": "npm run lint"
     }
   },
+  "overrides": {
+    "wct-local": "2.1.5"
+  },
   "scripts": {
     "test": "wct",
     "check": "npm-run-all --parallel check:*",
