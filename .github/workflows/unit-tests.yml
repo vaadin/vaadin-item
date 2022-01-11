@@ -28,6 +28,9 @@ jobs:
       - name: Install project npm dependencies
         run: "npm ci"
 
+      - name: Check launchpad version
+        run: "npm ls launchpad"
+
       - name: Install project Bower dependencies
         run: "bower install --quiet"
 
