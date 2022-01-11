@@ -57,6 +57,9 @@ jobs:
         # bower and polymer-modulizer are needed to run the Polymer 3 conversion step
         run: "npm install --quiet --no-progress --global bower polymer-modulizer"
 
+      - name: Install project npm dependencies
+        run: "npm install --quiet --no-progress"
+
       - name: Convert the source code to Polymer 3
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
