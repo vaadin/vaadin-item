@@ -8,10 +8,10 @@ jobs:
     name: Polymer 2 on the CI agent
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Node 12.x
+      - name: Set up Node 16.x
         uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16.x
 
       - name: Check out the source code
         uses: actions/checkout@v2
