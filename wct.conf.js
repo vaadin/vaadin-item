@@ -8,7 +8,7 @@ var tunneledLocalhost = 'localhost-for-saucelabs';
 
 module.exports = {
   testTimeout: 180 * 1000,
-  verbose: false,
+  verbose: true,
   plugins: {
     local: {
       browserOptions: {
