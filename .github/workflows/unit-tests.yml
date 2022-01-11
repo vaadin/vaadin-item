@@ -16,6 +16,10 @@ jobs:
       - name: Check out the source code
         uses: actions/checkout@v2
 
+      - name: Install latest npm
+        # magi-cli 1.0 requires npm 7 or higher
+        run: "npm install -g npm"
+
       - name: Install global npm dependencies
         # bower is needed to run 'bower install'
         # polymer-cli is needed to run the lint step
