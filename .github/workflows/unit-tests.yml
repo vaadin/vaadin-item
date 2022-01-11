@@ -8,10 +8,10 @@ jobs:
     name: Polymer 2 on the CI agent
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Node 16.x
+      - name: Set up Node 12.x
         uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: 12.x
 
       - name: Check out the source code
         uses: actions/checkout@v2
@@ -41,13 +41,17 @@ jobs:
     name: Polymer 3 on SauceLabs
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Node 16.x
+      - name: Set up Node 12.x
         uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: 12.x
 
       - name: Check out the (Polymer 2) source code
         uses: actions/checkout@v2
+
+      - name: Install latest npm
+        # magi-cli requires npm 7 or higher, and Node 12.x ships with npm 6
+        run: "npm install -g npm"
 
       - name: Install global npm dependencies
         # bower and polymer-modulizer are needed to run the Polymer 3 conversion step
