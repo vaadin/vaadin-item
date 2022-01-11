@@ -55,7 +55,7 @@ jobs:
 
       - name: Install global npm dependencies
         # bower and polymer-modulizer are needed to run the Polymer 3 conversion step
-        run: "npm install --quiet --no-progress --global bower polymer-modulizer"
+        run: "npm install --quiet --no-progress --global bower magi-cli@next polymer-modulizer"
 
       - name: Install project npm dependencies
         run: "npm ci"
@@ -64,7 +64,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          npx magi p3-convert --out . --import-style=name
+          magi p3-convert --out . --import-style=name
 
       # workaround for running tests on Android on SauceLabs (see wct.conf.js)
       - name: Add 'localhost-for-saucelabs' to /etc/hosts
