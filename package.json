@@ -28,13 +28,6 @@
       "pre-commit": "npm run lint"
     }
   },
-  "overrides": {
-    "web-component-tester": {
-      "wct-local": {
-        "launchpad": "0.7.5"
-      }
-    }
-  },
   "scripts": {
     "test": "wct",
     "check": "npm-run-all --parallel check:*",
