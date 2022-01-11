@@ -8,7 +8,7 @@ var tunneledLocalhost = 'localhost-for-saucelabs';
 
 module.exports = {
   testTimeout: 180 * 1000,
-  verbose: true,
+  verbose: false,
   plugins: {
     local: {
       browserOptions: {
@@ -19,6 +19,21 @@ module.exports = {
         ]
       }
     },
+    // MAGI REMOVE START
+    istanbul: {
+      dir: './coverage',
+      reporters: ['text-summary', 'lcov'],
+      include: [
+        '**/vaadin-item/src/*.html'
+      ],
+      exclude: [],
+      thresholds: {
+        global: {
+          statements: 98
+        }
+      }
+    }
+    // MAGI REMOVE END
   },
 
   registerHooks: function(context) {
