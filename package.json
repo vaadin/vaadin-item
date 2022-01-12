@@ -28,9 +28,6 @@
       "pre-commit": "npm run lint"
     }
   },
-  "overrides": {
-    "launchpad": "git+https://github.com/web-padawan/launchpad.git#fdd994d089572e2c2152d70cc74abf497d08d5b7"
-  },
   "scripts": {
     "test": "wct",
     "check": "npm-run-all --parallel check:*",
